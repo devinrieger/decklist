@@ -12,8 +12,6 @@ body {
 	margin-bottom: 10px;
 	color: #f5661b;
 	font-size: 2em;
-	font-weight: 500;
-	letter-spacing: 0.05em;
 }
 #listText {
 	background-color: rgb(85, 85, 85);
@@ -110,7 +108,6 @@ button {
 	background-color: rgb(85, 85, 85);
 	color: #f5661b;
 	border: none;
-	font-weight: 1000;
 	font-size: 16px;
 	border-radius: 30px;
 	text-align: center;
