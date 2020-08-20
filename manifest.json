@@ -1,0 +1,39 @@
+{
+	"name": "DeckList",
+	"version": "1.0",
+	"description": "Search for cards, click to build a list",
+	"permissions": ["activeTab", "declarativeContent", "storage", "tabs", "clipboardWrite", "downloads"],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "images/icon-16.png",
+			"32": "images/icon-32.png",
+			"48": "images/icon-48.png",
+			"128": "images/icon-128.png"
+		}
+	},
+	"icons": {
+		"16": "images/icon-16.png",
+		"32": "images/icon-32.png",
+		"48": "images/icon-48.png",
+		"128": "images/icon-128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://scryfall.com/*",
+				"https://gatherer.wizards.com/*",
+				"https://edhrec.com/*",
+				"https://www.magicspoiler.com/*"
+			],
+			"js": ["contentscripts/main.js"],
+			"css": ["styles.css"]
+		}
+	],
+	"web_accessible_resources": ["*.ttf" ],
+	"manifest_version": 2
+}

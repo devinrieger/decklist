@@ -1,0 +1,193 @@
+body {
+	background-color: #333;
+	width: 400px;
+	height: 500px;
+	padding-left: 20px;
+	padding-right: 20px;
+	position: relative;
+	color: rgb(238, 238, 238);
+}
+.title {
+	text-align: left;
+	margin-bottom: 10px;
+	color: #f5661b;
+	font-size: 2em;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+}
+#listText {
+	background-color: rgb(85, 85, 85);
+	overflow: scroll;
+	display: block;
+	width : 100%;
+	height: 80%;
+	resize: none;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.listCard {
+	width: 100%;
+}
+.listCard:hover {
+	background-color: #636161;
+}
+.listCard .qty, .listCard .name, .listCard .spacer {
+	display: inline;
+	font-family: monospace;
+	font-size: large;
+	color: #eae8e8;
+}
+.qtyControls {
+	float: right;
+	display: none;
+	cursor: pointer;
+}
+.qtyControls .add, .qtyControls .minus, .qtyControls .remove {
+	font-family: sans-serif;
+	font-size: medium;
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+	user-select: none;
+	position: relative;
+	width: 16px;
+	height: 16px;
+}
+.qty-plus-vert {
+	position: absolute;
+	width: 2px;
+	height: 12px;
+	top: 3px;
+	right: 14px;
+	margin: auto;
+	pointer-events: none;
+	background-color: #eae8e8;
+}
+.qty-plus-hori {
+	position: absolute;
+	width: 12px;
+	height: 2px;
+	top: 8px;
+	margin: auto;
+	pointer-events: none;
+	background-color: #eae8e8;
+}
+.qtyControls .remove {
+	transform: rotate(45deg);
+	top: 2px;
+}
+.qtyControls .add:hover .qty-plus-vert,
+.qtyControls .add:hover .qty-plus-hori {
+	background-color: #00FF00;
+}
+.qtyControls .add:hover:active .qty-plus-vert,
+.qtyControls .add:hover:active .qty-plus-hori {
+	background-color: #00cc00;
+}
+.qtyControls .minus:hover .qty-plus-hori {
+	background-color: #F0E121;
+}
+.qtyControls .minus:hover:active .qty-plus-hori {
+	background-color: #B8AC19;
+}
+.qtyControls .remove:hover .qty-plus-vert,
+.qtyControls .remove:hover .qty-plus-hori {
+	background-color: #DC143C;
+}
+.listCard:hover .qtyControls {
+	display: inline-block;
+}
+.control {
+	text-align: right;
+	margin-top: 3.5%;
+}
+button {
+	height: 30px;
+	width: 90px;
+	outline: none;
+	display: inline-block;
+	cursor: pointer;
+	background-color: rgb(85, 85, 85);
+	color: #f5661b;
+	border: none;
+	font-weight: 1000;
+	font-size: 16px;
+	border-radius: 30px;
+	text-align: center;
+}
+#exportList, #copyList {
+	margin-left: 5%;
+}
+#clearList {
+	margin-right: 22%;
+	background-color: #333;
+	padding-left: 0px;
+}
+#clearList:hover {
+	background-color: rgb(85, 85, 85);
+}
+svg {
+	width: 14px;
+	height: 14px;
+	fill: #f5661b;
+	margin-left: 10%;
+}
+button:hover {
+	color: #FF8C00;
+}
+button:hover svg {
+	fill: #FF8C00;
+}
+.dl-button {
+	top: 0px;
+	right: 5px;
+	padding: 5px;
+	position: absolute;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	transform: rotate(45deg);
+}
+.dl-plus-hori {
+	position: absolute;
+	width: 16px;
+	height: 2px;
+	margin: auto;
+	top: 14px;
+	left: 7px;
+	pointer-events: none;
+	background-color: rgb(238, 238, 238);
+}
+.dl-plus-vert {
+	position: absolute;
+	width: 2px;
+	height: 16px;
+	margin: auto;
+	top: 7px;
+	left: 14px;
+	pointer-events: none;
+	background-color: rgb(238, 238, 238);
+}
+#listText::-webkit-scrollbar {
+	width: 10px;
+	height: 30px
+}
+#listText::-webkit-scrollbar-thumb {
+	background: #808080;
+	border-radius: 30px;
+}
+#listText::-webkit-scrollbar-track {
+	background: rgb(85, 85, 85);
+}
+textarea.copy {
+	height: 1px;
+	width: 1px;
+	opacity: 0;
+}
+@font-face {
+	font-family: 'goudyMagic';
+	src: url('chrome-extension://ppodaonidhdfldjeanmpokalipbbmbok/goudyMagic.ttf') format('truetype');
+}
+div {
+	font-family: 'goudyMagic';
+}

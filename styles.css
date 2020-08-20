@@ -1,0 +1,108 @@
+.dl-button {
+	top: 0;
+	right: 0;
+	padding: 5px;
+	position: absolute;
+	opacity: 0.3;
+	cursor: pointer;
+	background-color: #333;
+	border-radius: 30px;
+	width: 30px;
+	height: 30px;
+}
+.dl-plus-hori {
+	position: absolute;
+	background-color: #FFF;
+	width: 16px;
+	height: 2px;
+	margin: auto;
+	top: 14px;
+	left: 7px;
+	pointer-events: none;
+}
+.dl-plus-vert {
+	position: absolute;
+	background-color: #FFF;
+	width: 2px;
+	height: 16px;
+	margin: auto;
+	top: 7px;
+	left: 14px;
+	pointer-events: none;
+}
+.card-grid-item:hover .dl-button, 
+.card-image-front:hover .dl-button,
+.cardItem .leftCol:hover .dl-button,
+.visualspoiler a:hover .dl-button,
+.cardImage:hover .dl-button,
+.card__container:hover .dl-button,
+.spoiler-set-card:hover .dl-button,
+.scard:hover .dl-button,
+.home-card:hover .dl-button {
+	opacity: 0.8;
+}
+.dl-check {
+	animation: checkrotate 0.2s 1 forwards;
+}
+.dl-check .dl-plus-hori {
+	animation: horicheckmorph 0.2s 1 forwards;
+}
+.dl-check .dl-plus-vert {
+	animation: vertcheckmorph 0.2s 1 forwards;
+}
+.dl-default .dl-plus-hori {
+	animation: horidefaultmorph 0.2s 1 forwards;
+}
+.dl-default .dl-plus-vert {
+	animation: vertdefaultmorph 0.2s 1 forwards;
+}
+@keyframes checkrotate {
+	100% {
+		transform: rotate(45deg);
+		opacity: 0.8;
+	}
+}
+@keyframes horicheckmorph {
+	100% {
+		position: absolute;
+		width: 7px;
+		height: 2px;
+		top: 19px;
+		left: 10px;
+		padding-left: 3px;
+		background-color: #00FF00;
+	}
+}
+@keyframes vertcheckmorph {
+	100% {
+		position: absolute;
+		width: 2px;
+		height: 12px;
+		top: 8px;
+		left: 15px;
+		background-color: #00FF00;
+	}
+}
+@keyframes horidefaultmorph {
+	100% {
+		background-color: #FFF;
+		width: 16px;
+		height: 2px;
+		margin: auto;
+		top: 14px;
+		left: 7px;
+	}
+}
+@keyframes vertdefaultmorph {
+	100% {
+		background-color: #FFF;
+		width: 2px;
+		height: 16px;
+		margin: auto;
+		top: 7px;
+		left: 14px;
+	}
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+}
