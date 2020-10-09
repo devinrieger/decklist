@@ -54,42 +54,30 @@ chrome.storage.sync.get(['list'], function(result) {
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	if (request.update === "list") {
-		chrome.storage.sync.get(['list'], function(result) {
-			let list = result.list;
-			document.querySelectorAll('.dl-button').forEach(target => {
-				let name = target.getAttribute('data-name');
-				if (list.find(card => card.name === name) && !target.className.includes('dl-check')) {
-					toggleChecked(target)
-				} else if (!list.find(card => card.name === name)) {
-					toggleUnchecked(target)
-				}
-			});
-		});
+		updateIcons();
 	}
 });
 
 function addToList(event) {
 	let target = event.target;
 	event.preventDefault();
-	toggleChecked(target);
 	chrome.storage.sync.get(['list'], function(result) {
 		let list = result.list;
 		list.push({name: target.getAttribute('data-name'), qty: 1});
-		chrome.storage.sync.set({list: list});
+		chrome.storage.sync.set({list: list}, updateIcons);
 	});
 }
 
 function removeFromList(event) {
 	let target = event.target;
 	event.preventDefault();
-	toggleUnchecked(target);
 	chrome.storage.sync.get(['list'], function(result) {
 		let list = result.list;
 		let index = list.findIndex(card => card.name === target.getAttribute('data-name'));
 		if (index > -1) {
 			list.splice(index, 1);
 		}
-		chrome.storage.sync.set({list: list});
+		chrome.storage.sync.set({list: list}, updateIcons);
 	});
 }
 
@@ -105,4 +93,18 @@ function toggleUnchecked(target) {
 	target.classList.remove('dl-check');
 	target.addEventListener('click', addToList);
 	target.removeEventListener('click', removeFromList);
+}
+
+function updateIcons() {
+	chrome.storage.sync.get(['list'], function(result) {
+		let list = result.list;
+		document.querySelectorAll('.dl-button').forEach(target => {
+			let name = target.getAttribute('data-name');
+			if (list.find(card => card.name === name) && !target.className.includes('dl-check')) {
+				toggleChecked(target)
+			} else if (!list.find(card => card.name === name)) {
+				toggleUnchecked(target)
+			}
+		});
+	});
 }
