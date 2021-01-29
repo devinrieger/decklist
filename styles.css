@@ -9,6 +9,7 @@
 	border-radius: 30px;
 	width: 30px;
 	height: 30px;
+	z-index: 2;
 }
 .dl-plus-hori {
 	position: absolute;
@@ -30,7 +31,7 @@
 	left: 14px;
 	pointer-events: none;
 }
-.card-grid-item:hover .dl-button, 
+.card-grid-item:hover .dl-button,
 .card-image-front:hover .dl-button,
 .cardItem .leftCol:hover .dl-button,
 .visualspoiler a:hover .dl-button,
@@ -38,8 +39,11 @@
 .card__container:hover .dl-button,
 .spoiler-set-card:hover .dl-button,
 .scard:hover .dl-button,
-.home-card:hover .dl-button {
-	opacity: 0.8;
+.home-card:hover .dl-button,
+.progressive-image:hover .dl-button,
+.pl-2:hover .dl-button,
+.col-4:hover .dl-button {
+	opacity: 0.6;
 }
 .dl-check {
 	animation: checkrotate 0.2s 1 forwards;
