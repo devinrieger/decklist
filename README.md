@@ -6,9 +6,22 @@ Clicking the add icon will add the card to your list. Clicking on the icon again
 
 Clicking on the extension icon opens up a visual representation of your list, as well as options to edit it. You may edit the quantity and remove cards that you have added to the list. The extension UI also allows for downloading a .txt file and copying to the clipboard, as well as clearing the list.
 
-Notes: 
+v1.1 Notes:
+- Added support for TCGPlayer and Cube Cobra
+- Fixed SPA bug, the funkiness seen on EDHRec should be resolved now
+- Refactored main.js
+
+Known Issues:
+- Partners on EDHRec are funky and will require some time to figure out how to support
+
+Desired Functionality:
+- Enable/disable toggle so people can use native EDHRec feature if they so desire
+- Multiple lists (this may be a breaking change, in that the underlying storage structure would have to change and thus users would lose any current list)
+- Text import
+
+Notes:
 a) the extension can only add cards from sites that include the card name in proximity to the card tile. The four sites it currently works on have the actual card names typically as alt text of the card image. Unfortunately some sites don't follow this format (such as Mythic Spoiler which uses a name-like slug instead) so the extension will not work on those sites. If you would like to add another site please contact me and I will investigate!
 
-b) EDHRec released a similar feature during development of this project for their site. The extension code will disable the EDHRec feature in favor of the extension's functionality. A known bug/conflict is that on a fresh page view, the extension's code sometimes doesn't work. Refreshing the page should resolve for the time being, a fix is in the works!
+b) EDHRec released a similar feature during development of this project for their site. The extension code will disable the EDHRec feature in favor of the extension's functionality.
 
-c) This project is open source. If you would like to contribute please feel free!
+c) This project is open source. If you would like to contribute please check out the github page at https://github.com/devinrieger/decklist
