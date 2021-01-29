@@ -28,7 +28,9 @@
 				"https://scryfall.com/*",
 				"https://gatherer.wizards.com/*",
 				"https://edhrec.com/*",
-				"https://www.magicspoiler.com/*"
+				"https://www.magicspoiler.com/*",
+				"https://www.tcgplayer.com/*",
+				"https://cubecobra.com/*"
 			],
 			"js": ["contentscripts/main.js"],
 			"css": ["styles.css"]
