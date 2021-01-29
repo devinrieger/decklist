@@ -1,10 +1,18 @@
 # DeckList
 
-A build on-the-fly decklist extension for Magic: The Gathering. The extension works by adding an "add" icon to individual cards on Gatherer, Scryfall, EDHRec, and MagicSpoiler.
+A build on-the-fly decklist extension for Magic: The Gathering. The extension works by adding an "add" icon to individual cards on popular Magic: The Gathering sites.
 
 Clicking the add icon will add the card to your list. Clicking on the icon again (which changes to a green checkmark for cards on your list) will remove the card from your list.
 
 Clicking on the extension icon opens up a visual representation of your list, as well as options to edit it. You may edit the quantity and remove cards that you have added to the list. The extension UI also allows for downloading a .txt file and copying to the clipboard, as well as clearing the list.
+
+Supported Sites:
+- Scryfall
+- Gatherer
+- Magic Spoiler
+- EDHRec
+- Cube Cobra
+- TCGPlayer
 
 v1.1 Notes:
 - Added support for TCGPlayer and Cube Cobra
@@ -13,8 +21,9 @@ v1.1 Notes:
 
 Known Issues:
 - Partners on EDHRec are funky and will require some time to figure out how to support
+- TCGPlayer does not differentiate their products in any meaningful way on search result pages. This means that the "add" button will appear on any product, not just Magic cards.
 
-Desired Functionality:
+Desired Features:
 - Enable/disable toggle so people can use native EDHRec feature if they so desire
 - Multiple lists (this may be a breaking change, in that the underlying storage structure would have to change and thus users would lose any current list)
 - Text import
