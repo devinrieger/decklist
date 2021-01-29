@@ -9,6 +9,7 @@
 	border-radius: 30px;
 	width: 30px;
 	height: 30px;
+	z-index: 99999;
 }
 .dl-plus-hori {
 	position: absolute;

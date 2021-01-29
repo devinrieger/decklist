@@ -18,6 +18,12 @@ const hostMap = {
 		card: '.spoiler-set-card, .scard, .home-card',
 		selector: 'img',
 		attribute: 'alt'
+	},
+	'www.strictlybetter.eu': {
+		card: '.mtgcard-wrapper:not(.newcard)',
+		selector: 'img.mtgcard',
+		attribute: 'alt',
+		observer: '#cards, #upgrade_view_container'
 	}
 };
 
@@ -25,8 +31,27 @@ let host = window.location.host;
 let cardSelector = hostMap[host].card;
 let targetSelector = hostMap[host].selector;
 let nameAttribute = hostMap[host].attribute;
+let observerSelector = hostMap[host].observer
 
-chrome.storage.sync.get(['list'], function(result) {
+let observer = new MutationObserver(function(mutationsList, observer) {
+	chrome.storage.sync.get(['list'], addButtons);
+});
+
+if (observerSelector !== undefined) {
+	document.querySelectorAll(observerSelector).forEach(observerEl => {
+		observer.observe(observerEl, { attributes: false, childList: true, subtree: true });
+	});
+}
+
+chrome.storage.sync.get(['list'], addButtons);
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	if (request.update === "list") {
+		updateIcons();
+	}
+});
+
+function addButtons(result) {
 	document.querySelectorAll(cardSelector).forEach(cardEl => {
 		let name = cardEl.querySelector(targetSelector).getAttribute(nameAttribute).replace(/( \(.*)\)/, '');
 		let edhRecBtn = cardEl.querySelector('.toggle-card-in-decklist-button');
@@ -46,15 +71,20 @@ chrome.storage.sync.get(['list'], function(result) {
 
 		cardEl.style.position = 'relative';
 		cardEl.style.display = 'inline-block';
-		cardEl.appendChild(copyEl);
-	});
-});
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-	if (request.update === "list") {
-		updateIcons();
-	}
-});
+		// Observer might be trying to create buttons when one already exists,
+		// instead replace the old one
+		let oldEl = cardEl.querySelector('div.dl-button');
+		if (oldEl)
+			cardEl.replaceChild(oldEl, copyEl);
+		else
+			cardEl.appendChild(copyEl);
+	});
+
+	// Prevent above DOM edits from re-triggering observer
+	observer.takeRecords();	
+}
+
 
 function addToList(event) {
 	let target = event.target;
