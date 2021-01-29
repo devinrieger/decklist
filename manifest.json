@@ -30,7 +30,8 @@
 				"https://edhrec.com/*",
 				"https://www.magicspoiler.com/*",
 				"https://www.tcgplayer.com/*",
-				"https://cubecobra.com/*"
+				"https://cubecobra.com/*",
+				"https://www.strictlybetter.eu/*"
 			],
 			"js": ["contentscripts/main.js"],
 			"css": ["styles.css"]

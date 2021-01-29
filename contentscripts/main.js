@@ -34,6 +34,12 @@ const hostMap = {
 		selector: 'img',
 		attribute: 'alt',
 		enableWatchInterval: false
+	},
+	'www.strictlybetter.eu': {
+		card: '.mtgcard-wrapper:not(.newcard)',
+		selector: 'img.mtgcard',
+		attribute: 'alt',
+		enableWatchInterval: true
 	}
 };
 
