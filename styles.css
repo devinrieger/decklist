@@ -42,7 +42,8 @@
 .home-card:hover .dl-button,
 .progressive-image:hover .dl-button,
 .pl-2:hover .dl-button,
-.col-4:hover .dl-button {
+.col-4:hover .dl-button,
+.mtgcard-wrapper:not(.newcard):hover .dl-button {
 	opacity: 0.6;
 }
 .dl-check {

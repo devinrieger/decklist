@@ -13,6 +13,7 @@ Supported Sites:
 - EDHRec
 - Cube Cobra
 - TCGPlayer
+- StrictlyBetter
 
 v1.1 Notes:
 - Added support for TCGPlayer and Cube Cobra
