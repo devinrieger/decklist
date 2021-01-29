@@ -39,11 +39,9 @@ chrome.storage.sync.get(['list'], function(result) {
 
 		let list = result.list;
 		if (list.find(card => card.name === name)) {
-			copyEl.classList.add('dl-check');
-			copyEl.addEventListener('click', removeFromList);
+			toggleChecked(copyEl);
 		} else {
-			copyEl.classList.add('dl-default');
-			copyEl.addEventListener('click', addToList);
+			toggleUnchecked(copyEl);
 		}
 
 		cardEl.style.position = 'relative';
