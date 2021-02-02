@@ -12,8 +12,8 @@ const hostMap = {
 		enableWatchInterval: false
 	},
 	'edhrec.com': {
-		card: '.card__container',
-		selector: 'img.card__image-img',
+		card: '[class*="Card_imageContainer"]',
+		selector: 'img[class*="Card_image"]',
 		attribute: 'alt',
 		enableWatchInterval: true
 	},
@@ -71,27 +71,30 @@ function initIcons() {
 	chrome.storage.sync.get(['list'], function(result) {
 		let cardNodes = document.querySelectorAll(`${cardSelector}:not(.dl-added)`);
 		cardNodes.forEach(cardEl => {
-			cardEl.classList.add('dl-added');
+			let rawName = cardEl.querySelector(targetSelector) && cardEl.querySelector(targetSelector).getAttribute(nameAttribute);
+			if (rawName) {
+				cardEl.classList.add('dl-added');
 
-			let name = cardEl.querySelector(targetSelector).getAttribute(nameAttribute).replace(/( \(.*)\)/, '');
-			let edhRecBtn = cardEl.querySelector('.toggle-card-in-decklist-button');
-			if (edhRecBtn) {edhRecBtn.remove();}
-
-			let copyEl = document.createElement('div');
-			copyEl.classList.add('dl-button');
-			copyEl.innerHTML = '<div class="dl-plus-vert"></div><div class="dl-plus-hori"></div>';
-			copyEl.setAttribute('data-name', name);
-
-			let list = result.list;
-			if (list.find(card => card.name === name)) {
-				toggleChecked(copyEl);
-			} else {
-				toggleUnchecked(copyEl);
+				let name = rawName.replace(/( \(.*)\)/, '');
+				let edhRecBtn = cardEl.querySelector('[class*="Card_toggleCardInDecklistButton"]');
+				if (edhRecBtn) {edhRecBtn.remove();}
+	
+				let copyEl = document.createElement('div');
+				copyEl.classList.add('dl-button');
+				copyEl.innerHTML = '<div class="dl-plus-vert"></div><div class="dl-plus-hori"></div>';
+				copyEl.setAttribute('data-name', name);
+	
+				let list = result.list;
+				if (list.find(card => card.name === name)) {
+					toggleChecked(copyEl);
+				} else {
+					toggleUnchecked(copyEl);
+				}
+	
+				cardEl.style.position = 'relative';
+				cardEl.style.display = 'inline-block';
+				cardEl.appendChild(copyEl);
 			}
-
-			cardEl.style.position = 'relative';
-			cardEl.style.display = 'inline-block';
-			cardEl.appendChild(copyEl);
 		});
 	});
 }
@@ -99,7 +102,7 @@ function initIcons() {
 function watchDOM() {
 	if (enableWatchInterval) {
 		let watchInterval = setInterval(() => {
-			let numNodes = document.querySelectorAll(cardSelector).length;
+			let numNodes = document.querySelectorAll(`${cardSelector} ${targetSelector}`).length;
 			let numPrevNodes = document.querySelectorAll(`${cardSelector}.dl-added`).length;
 			if (numNodes !== numPrevNodes) {
 				initIcons();

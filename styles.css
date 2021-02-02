@@ -36,7 +36,7 @@
 .cardItem .leftCol:hover .dl-button,
 .visualspoiler a:hover .dl-button,
 .cardImage:hover .dl-button,
-.card__container:hover .dl-button,
+[class*="Card_imageContainer"]:hover .dl-button,
 .spoiler-set-card:hover .dl-button,
 .scard:hover .dl-button,
 .home-card:hover .dl-button,
