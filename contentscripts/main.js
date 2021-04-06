@@ -1,3 +1,5 @@
+// This file is the contentscript that runs on every page load of integrated sites.
+
 const hostMap = {
 	'scryfall.com': {
 		card: '.card-grid-item:not(.flexbox-spacer), .card-image-front',
@@ -111,14 +113,13 @@ function watchDOM() {
 	}
 }
 
-function addToList(event) {
-	let target = event.target;
+async function addToList(event) {
 	event.preventDefault();
-	chrome.storage.sync.get(['list'], function(result) {
-		let list = result.list;
-		list.push({name: target.getAttribute('data-name'), qty: 1});
-		chrome.storage.sync.set({list: list}, updateIcons);
-	});
+	let target = event.target;
+	toggleChecked(target);
+	let name = target.getAttribute('data-name');
+	let imageurl = await fetchImageURL(name);
+	syncAdd(name, imageurl);
 }
 
 function removeFromList(event) {
@@ -159,5 +160,21 @@ function updateIcons() {
 				toggleUnchecked(target)
 			}
 		});
+	});
+}
+
+async function fetchImageURL(name) {
+	let queryURL = `https://api.scryfall.com/cards/named?fuzzy=${name.replace(/ /g, '+')}`;
+	let response = await fetch(queryURL);
+	let card_data = await response.json();
+	let uri = card_data?.card_faces?.length ? card_data.card_faces[0]?.image_uris?.normal : card_data?.image_uris?.normal;
+	return uri;
+}
+
+function syncAdd(name, imageurl) {
+	chrome.storage.sync.get(['list'], function(result) {
+		let list = result.list;
+		list.push({name, qty: 1, imageurl});
+		chrome.storage.sync.set({list: list}, updateIcons);
 	});
 }
