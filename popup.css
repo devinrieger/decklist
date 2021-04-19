@@ -191,7 +191,7 @@ textarea.copy {
 }
 @font-face {
 	font-family: 'goudyMagic';
-	src: url('chrome-extension://ppodaonidhdfldjeanmpokalipbbmbok/goudyMagic.ttf') format('truetype');
+	src: url('/goudyMagic.ttf') format('truetype');
 }
 div {
 	font-family: 'goudyMagic';
