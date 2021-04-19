@@ -154,9 +154,10 @@ function updateIcons() {
 		let list = result.list;
 		document.querySelectorAll('.dl-button').forEach(target => {
 			let name = target.getAttribute('data-name');
-			if (list.find(card => card.name === name) && !target.className.includes('dl-check')) {
+			let checked = target.className.includes('dl-check');
+			if (list.find(card => card.name === name) && !checked) {
 				toggleChecked(target)
-			} else if (!list.find(card => card.name === name)) {
+			} else if (!list.find(card => card.name === name) && checked) {
 				toggleUnchecked(target)
 			}
 		});
