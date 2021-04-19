@@ -1,11 +1,19 @@
 body {
+	margin: 0px;
+}
+.mainPanel {
 	background-color: #333;
-	width: 400px;
+	width: 600px;
 	height: 500px;
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-bottom: 10px;
 	position: relative;
 	color: rgb(238, 238, 238);
+	overflow: hidden;
+}
+.navbar {
+	padding-top: 10px;
 }
 .title {
 	text-align: left;
@@ -25,6 +33,7 @@ body {
 }
 .listCard {
 	width: 100%;
+	position: relative;
 }
 .listCard:hover {
 	background-color: #636161;
@@ -32,7 +41,7 @@ body {
 .listCard .qty, .listCard .name, .listCard .spacer {
 	display: inline;
 	font-family: monospace;
-	font-size: large;
+	font-size: 14px;
 	color: #eae8e8;
 }
 .qtyControls {
@@ -97,7 +106,7 @@ body {
 }
 .control {
 	text-align: right;
-	margin-top: 3.5%;
+	padding-top: 15px;
 }
 button {
 	height: 30px;
@@ -116,7 +125,7 @@ button {
 	margin-left: 5%;
 }
 #clearList {
-	margin-right: 22%;
+	margin-right: 45%;
 	background-color: #333;
 }
 #clearList:hover {
@@ -135,7 +144,7 @@ button:hover svg {
 	fill: #FF8C00;
 }
 .dl-button {
-	top: 0px;
+	top: 5px;
 	right: 5px;
 	padding: 5px;
 	position: absolute;
@@ -182,8 +191,24 @@ textarea.copy {
 }
 @font-face {
 	font-family: 'goudyMagic';
-	src: url('chrome-extension://ppodaonidhdfldjeanmpokalipbbmbok/goudyMagic.ttf') format('truetype');
+	src: url('/goudyMagic.ttf') format('truetype');
 }
 div {
 	font-family: 'goudyMagic';
+}
+
+#imageContainer img {
+	pointer-events: none;
+	border-radius: 5%;
+	position: absolute;
+	right: 120px;
+	top: 18px;
+	opacity: 0;
+	z-index: -9999;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+#imageContainer img.visible {
+	opacity: 1;
+	z-index: 15;
 }
