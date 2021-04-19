@@ -41,7 +41,7 @@ body {
 .listCard .qty, .listCard .name, .listCard .spacer {
 	display: inline;
 	font-family: monospace;
-	font-size: large;
+	font-size: 14px;
 	color: #eae8e8;
 }
 .qtyControls {
