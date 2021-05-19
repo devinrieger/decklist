@@ -6,6 +6,8 @@ Clicking the add icon will add the card to your list. Clicking on the icon again
 
 Clicking on the extension icon opens up a visual representation of your list, as well as options to edit it. You may edit the quantity and remove cards that you have added to the list. The extension UI also allows for downloading a .txt file and copying to the clipboard, as well as clearing the list.
 
+Hovering over a card's name in the list will show a preview image of the card.
+
 Supported Sites:
 - Scryfall
 - Gatherer
@@ -14,11 +16,6 @@ Supported Sites:
 - Cube Cobra
 - TCGPlayer
 - StrictlyBetter
-
-v1.1 Notes:
-- Added support for TCGPlayer and Cube Cobra
-- Fixed SPA bug, the funkiness seen on EDHRec should be resolved now
-- Refactored main.js
 
 Known Issues:
 - Partners on EDHRec are funky and will require some time to figure out how to support
