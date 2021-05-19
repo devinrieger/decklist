@@ -2,7 +2,7 @@
 	"name": "DeckList",
 	"version": "1.2.0",
 	"description": "Search for cards, click to build a list",
-	"permissions": ["activeTab", "storage", "tabs", "clipboardWrite", "downloads"],
+	"permissions": ["activeTab", "storage", "tabs", "clipboardWrite", "downloads", "unlimitedStorage"],
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false
