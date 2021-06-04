@@ -41,7 +41,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
 // Initialize card elements; for each card in the list:
 // create the HTML, set up quantity controls, and create image
-chrome.storage.sync.get(['list'], function(data) {
+chrome.storage.local.get(['list'], function(data) {
 	data.list.forEach((card, i) => {
 		let qty = card.qty;
 		let name = card.name;
@@ -101,7 +101,7 @@ function hideImage(event) {
 function updateList(event) {
 	let action = event.target.className;
 	let name = event.target.parentElement.parentElement.getAttribute('data-name');
-	chrome.storage.sync.get(['list'], function(data) {
+	chrome.storage.local.get(['list'], function(data) {
 		let list = data.list;
 		let index = list.findIndex(card => card.name === name);
 		switch (action) {
@@ -118,7 +118,7 @@ function updateList(event) {
 				list.splice(index, 1);
 				break;
 		}
-		chrome.storage.sync.set({list: list});
+		chrome.storage.local.set({list: list});
 	});
 }
 
@@ -135,7 +135,7 @@ function createCopyString(list) {
 
 // Copy list to clipboard
 copyList.onclick = function(event) {
-	chrome.storage.sync.get(['list'], function(data) {
+	chrome.storage.local.get(['list'], function(data) {
 		let copyTextArea = document.querySelector('textarea.copy');
 		let copyStr = createCopyString(data.list);
 		copyTextArea.innerHTML = copyStr;
@@ -152,7 +152,7 @@ copyList.onclick = function(event) {
 
 // Export list to .txt file
 exportList.onclick = function(event) {
-	chrome.storage.sync.get(['list'], function(data) {
+	chrome.storage.local.get(['list'], function(data) {
 		let copyStr = createCopyString(data.list);
 		if (!!copyStr) {
 			let blob = new Blob([copyStr], {type: "text/plain"});
@@ -167,7 +167,7 @@ exportList.onclick = function(event) {
 
 // Clear list
 clearList.onclick = function(event) {
-	chrome.storage.sync.set({list: []});
+	chrome.storage.local.set({list: []});
 }
 
 // Close popup window
