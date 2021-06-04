@@ -4,6 +4,7 @@
 let copyList = document.querySelector('#copyList');
 let exportList = document.querySelector('#exportList');
 let clearList = document.querySelector('#clearList');
+let buyList = document.querySelector('#buyList');
 let listText = document.querySelector('#listText');
 let closePopup = document.querySelector('.dl-button');
 
@@ -173,4 +174,16 @@ clearList.onclick = function(event) {
 // Close popup window
 closePopup.onclick = function(event) {
 	window.close();
+}
+
+// Open TCGPlayer Mass Entry
+buyList.onclick = function(event) {
+	chrome.storage.sync.get(['list'], function(data) {
+		let baseUrl = 'https://www.tcgplayer.com/massentry?productline=Magic&utm_campaign=affiliate&utm_medium=decklistext&utm_source=decklistext&c=';
+		let listParams = data.list.reduce((acc, card) => {
+			return acc + `${card.qty} ${card.name.split(' //')[0]}||`;
+		}, '').replace(/ /g, '%20');
+		let fullUrl = baseUrl + listParams;
+		chrome.tabs.create({ url: fullUrl })
+	});
 }
