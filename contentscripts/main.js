@@ -70,7 +70,7 @@ function initListListener() {
 }
 
 function initIcons() {
-	chrome.storage.sync.get(['list'], function(result) {
+	chrome.storage.local.get(['list'], function(result) {
 		let cardNodes = document.querySelectorAll(`${cardSelector}:not(.dl-added)`);
 		cardNodes.forEach(cardEl => {
 			let rawName = cardEl.querySelector(targetSelector) && cardEl.querySelector(targetSelector).getAttribute(nameAttribute);
@@ -125,13 +125,13 @@ async function addToList(event) {
 function removeFromList(event) {
 	let target = event.target;
 	event.preventDefault();
-	chrome.storage.sync.get(['list'], function(result) {
+	chrome.storage.local.get(['list'], function(result) {
 		let list = result.list;
 		let index = list.findIndex(card => card.name === target.getAttribute('data-name'));
 		if (index > -1) {
 			list.splice(index, 1);
 		}
-		chrome.storage.sync.set({list: list}, updateIcons);
+		chrome.storage.local.set({list: list}, updateIcons);
 	});
 }
 
@@ -150,7 +150,7 @@ function toggleUnchecked(target) {
 }
 
 function updateIcons() {
-	chrome.storage.sync.get(['list'], function(result) {
+	chrome.storage.local.get(['list'], function(result) {
 		let list = result.list;
 		document.querySelectorAll('.dl-button').forEach(target => {
 			let name = target.getAttribute('data-name');
@@ -173,9 +173,9 @@ async function fetchImageURL(name) {
 }
 
 function syncAdd(name, imageurl) {
-	chrome.storage.sync.get(['list'], function(result) {
+	chrome.storage.local.get(['list'], function(result) {
 		let list = result.list;
 		list.push({name, qty: 1, imageurl});
-		chrome.storage.sync.set({list: list}, updateIcons);
+		chrome.storage.local.set({list: list}, updateIcons);
 	});
 }

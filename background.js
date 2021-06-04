@@ -1,7 +1,7 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(function() {
-	chrome.storage.sync.set({list: []});
+	chrome.storage.local.set({list: []});
 });
 
 chrome.tabs.onActivated.addListener(function(activeInfo) {
