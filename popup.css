@@ -121,11 +121,11 @@ button {
 	border-radius: 30px;
 	text-align: center;
 }
-#exportList, #copyList {
-	margin-left: 5%;
+#exportList, #copyList, #buyList {
+	margin-left: 3%;
 }
 #clearList {
-	margin-right: 45%;
+	margin-right: 31%;
 	background-color: #333;
 }
 #clearList:hover {
