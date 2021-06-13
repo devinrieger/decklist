@@ -79,7 +79,7 @@ function initIcons() {
 
 				let name = rawName.replace(/( \(.*)\)/, '');
 				let edhRecBtn = cardEl.querySelector('[class*="Card_toggleCardInDecklistButton"]');
-				if (edhRecBtn) {edhRecBtn.remove();}
+				if (edhRecBtn) { edhRecBtn.remove(); }
 	
 				let copyEl = document.createElement('div');
 				copyEl.classList.add('dl-button');
@@ -131,7 +131,7 @@ function removeFromList(event) {
 		if (index > -1) {
 			list.splice(index, 1);
 		}
-		chrome.storage.local.set({list: list}, updateIcons);
+		chrome.storage.local.set({ list }, updateIcons);
 	});
 }
 
@@ -176,6 +176,6 @@ function syncAdd(name, imageurl) {
 	chrome.storage.local.get(['list'], function(result) {
 		let list = result.list;
 		list.push({name, qty: 1, imageurl});
-		chrome.storage.local.set({list: list}, updateIcons);
+		chrome.storage.local.set({ list }, updateIcons);
 	});
 }

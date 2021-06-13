@@ -111,3 +111,8 @@
 *, *:before, *:after {
 	box-sizing: border-box;
 }
+
+[class*='Card_clipboardButton'] {
+	right: auto;
+	left: 10px;
+}

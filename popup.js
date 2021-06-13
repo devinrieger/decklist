@@ -17,7 +17,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 		let newValue = changes[key].newValue
 		if (key === 'list') {
 			// Send updated list to active tab to update checkmarks
-			chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
 				chrome.tabs.sendMessage(tabs[0].id, {update: "list"});
 			});
 			if (newValue.length === 0) {
@@ -119,7 +119,7 @@ function updateList(event) {
 				list.splice(index, 1);
 				break;
 		}
-		chrome.storage.local.set({list: list});
+		chrome.storage.local.set({ list });
 	});
 }
 
@@ -156,7 +156,7 @@ exportList.onclick = function(event) {
 	chrome.storage.local.get(['list'], function(data) {
 		let copyStr = createCopyString(data.list);
 		if (!!copyStr) {
-			let blob = new Blob([copyStr], {type: "text/plain"});
+			let blob = new Blob([copyStr], { type: "text/plain" });
 			let url = URL.createObjectURL(blob);
 			chrome.downloads.download({
 				url: url,
@@ -184,6 +184,19 @@ buyList.onclick = function(event) {
 			return acc + `${card.qty} ${card.name.split(' //')[0]}||`;
 		}, '').replace(/ /g, '%20');
 		let fullUrl = baseUrl + listParams;
+		chrome.tabs.create({ url: fullUrl })
+	});
+}
+
+// Open Archidekt Mass Entry
+buildList.onclick = function(event) {
+	chrome.storage.local.get(['list'], function(data) {
+		let baseUrl = 'https://archidekt.com/cardImport?c=';
+		let listParams = data.list.reduce((acc, card) => {
+			return acc + `${card.qty} ${card.name.split(' //')[0]}\n`;
+		}, '');
+		let encodedParams = encodeURIComponent(listParams);
+		let fullUrl = baseUrl + encodedParams;
 		chrome.tabs.create({ url: fullUrl })
 	});
 }
