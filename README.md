@@ -22,14 +22,14 @@ Known Issues:
 - TCGPlayer does not differentiate their products in any meaningful way on search result pages. This means that the "add" button will appear on any product, not just Magic cards.
 
 Desired Features:
-- Enable/disable toggle so people can use native EDHRec feature if they so desire
 - Multiple lists (this may be a breaking change, in that the underlying storage structure would have to change and thus users would lose any current list)
 - Text import
+- Prices
 
 Notes:
 
 a) the extension can only add cards from sites that include the card name in proximity to the card tile. The four sites it currently works on have the actual card names typically as alt text of the card image. Unfortunately some sites don't follow this format (such as Mythic Spoiler which uses a name-like slug instead) so the extension will not work on those sites. If you would like to add another site please contact me and I will investigate!
 
-b) EDHRec released a similar feature during development of this project for their site. The extension code will disable the EDHRec feature in favor of the extension's functionality.
+b) EDHRec released a similar feature during development of this project for their site. The extension code will move the EDHRec feature in favor of the extension's functionality.
 
 c) This project is open source. If you would like to contribute please check out the github page at https://github.com/devinrieger/decklist
