@@ -110,26 +110,26 @@ body {
 }
 button {
 	height: 30px;
-	width: 90px;
+	width: 110px;
 	outline: none;
 	display: inline-block;
 	cursor: pointer;
 	background-color: rgb(85, 85, 85);
 	color: #f5661b;
 	border: none;
-	font-size: 16px;
-	border-radius: 30px;
+	font-size: 14px;
+	border-radius: 5px;
 	text-align: center;
 }
-#exportList, #copyList, #buyList {
-	margin-left: 3%;
+#exportList, #copyList, #buyList, #buildList, #clearList {
+	margin-left: 1%;
+	margin-right: 1%;
 }
 #clearList {
-	margin-right: 31%;
-	background-color: #333;
+	margin-left: 0%;
 }
-#clearList:hover {
-	background-color: rgb(85, 85, 85);
+#copyList {
+	margin-right: 0%;
 }
 svg {
 	width: 14px;

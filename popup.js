@@ -187,3 +187,16 @@ buyList.onclick = function(event) {
 		chrome.tabs.create({ url: fullUrl })
 	});
 }
+
+// Open Archidekt Mass Entry
+buildList.onclick = function(event) {
+	chrome.storage.local.get(['list'], function(data) {
+		let baseUrl = 'https://archidekt.com/cardImport?c=';
+		let listParams = data.list.reduce((acc, card) => {
+			return acc + `${card.qty} ${card.name.split(' //')[0]}\n`;
+		}, '');
+		let encodedParams = encodeURIComponent(listParams);
+		let fullUrl = baseUrl + encodedParams;
+		chrome.tabs.create({ url: fullUrl })
+	});
+}
