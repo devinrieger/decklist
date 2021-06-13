@@ -8,6 +8,8 @@ Clicking on the extension icon opens up a visual representation of your list, as
 
 Hovering over a card's name in the list will show a preview image of the card.
 
+The list can also be automatically exported to TCGPlayer and Archidekt.
+
 Supported Sites:
 - Scryfall
 - Gatherer
@@ -28,7 +30,7 @@ Desired Features:
 
 Notes:
 
-a) the extension can only add cards from sites that include the card name in proximity to the card tile. The four sites it currently works on have the actual card names typically as alt text of the card image. Unfortunately some sites don't follow this format (such as Mythic Spoiler which uses a name-like slug instead) so the extension will not work on those sites. If you would like to add another site please contact me and I will investigate!
+a) The extension can only add cards from sites that include the card name in proximity to the card tile. The four sites it currently works on have the actual card names typically as alt text of the card image. Unfortunately some sites don't follow this format (such as Mythic Spoiler which uses a name-like slug instead) so the extension will not work on those sites. If you would like to add another site please contact me and I will investigate!
 
 b) EDHRec released a similar feature during development of this project for their site. The extension code will move the EDHRec feature in favor of the extension's functionality.
 
