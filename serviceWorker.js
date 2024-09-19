@@ -18,9 +18,9 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 				return acc + cardItem.qty;
 			}, 0);
 			let totalString = total > 0 ? `${total}` : '';
-			chrome.browserAction.setBadgeText({text: `${totalString}`});
+			chrome.action.setBadgeText({text: `${totalString}`});
 		}
 	}
 });
 
-chrome.browserAction.setBadgeBackgroundColor({ color: '#333' });
+chrome.action.setBadgeBackgroundColor({ color: '#333' });
