@@ -2,7 +2,7 @@
 	"name": "DeckList",
 	"version": "1.3.3",
 	"description": "Search for Magic: The Gathering cards, click to build a list",
-	"permissions": ["activeTab", "storage", "tabs", "clipboardWrite", "downloads"],
+	"permissions": ["activeTab", "storage", "clipboardWrite", "downloads"],
 	"background": {
 		"service_worker": "serviceWorker.js",
 		"type": "module"
