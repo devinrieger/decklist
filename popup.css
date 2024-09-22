@@ -1,214 +1,214 @@
 body {
-	margin: 0px;
+  margin: 0px;
 }
 .mainPanel {
-	background-color: #333;
-	width: 600px;
-	height: 500px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 10px;
-	position: relative;
-	color: rgb(238, 238, 238);
-	overflow: hidden;
+  background-color: #333;
+  width: 600px;
+  height: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  position: relative;
+  color: rgb(238, 238, 238);
+  overflow: hidden;
 }
 .navbar {
-	padding-top: 10px;
+  padding-top: 10px;
 }
 .title {
-	text-align: left;
-	margin-bottom: 10px;
-	color: #f5661b;
-	font-size: 2em;
+  text-align: left;
+  margin-bottom: 10px;
+  color: #f5661b;
+  font-size: 2em;
 }
 #listText {
-	background-color: rgb(85, 85, 85);
-	overflow: scroll;
-	display: block;
-	width : 100%;
-	height: 80%;
-	resize: none;
-	overflow-y: auto;
-	overflow-x: hidden;
+  background-color: rgb(85, 85, 85);
+  overflow: scroll;
+  display: block;
+  width : 100%;
+  height: 80%;
+  resize: none;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .listCard {
-	width: 100%;
-	position: relative;
+  width: 100%;
+  position: relative;
 }
 .listCard:hover {
-	background-color: #636161;
+  background-color: #636161;
 }
 .listCard .qty, .listCard .name, .listCard .spacer {
-	display: inline;
-	font-family: monospace;
-	font-size: 14px;
-	color: #eae8e8;
+  display: inline;
+  font-family: monospace;
+  font-size: 14px;
+  color: #eae8e8;
 }
 .qtyControls {
-	float: right;
-	display: none;
-	cursor: pointer;
+  float: right;
+  display: none;
+  cursor: pointer;
 }
 .qtyControls .add, .qtyControls .minus, .qtyControls .remove {
-	font-family: sans-serif;
-	font-size: medium;
-	display: inline-block;
-	padding-left: 5px;
-	padding-right: 5px;
-	user-select: none;
-	position: relative;
-	width: 16px;
-	height: 16px;
+  font-family: sans-serif;
+  font-size: medium;
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  user-select: none;
+  position: relative;
+  width: 16px;
+  height: 16px;
 }
 .qty-plus-vert {
-	position: absolute;
-	width: 2px;
-	height: 12px;
-	top: 3px;
-	right: 14px;
-	margin: auto;
-	pointer-events: none;
-	background-color: #eae8e8;
+  position: absolute;
+  width: 2px;
+  height: 12px;
+  top: 3px;
+  right: 14px;
+  margin: auto;
+  pointer-events: none;
+  background-color: #eae8e8;
 }
 .qty-plus-hori {
-	position: absolute;
-	width: 12px;
-	height: 2px;
-	top: 8px;
-	margin: auto;
-	pointer-events: none;
-	background-color: #eae8e8;
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  top: 8px;
+  margin: auto;
+  pointer-events: none;
+  background-color: #eae8e8;
 }
 .qtyControls .remove {
-	transform: rotate(45deg);
-	top: 2px;
+  transform: rotate(45deg);
+  top: 2px;
 }
 .qtyControls .add:hover .qty-plus-vert,
 .qtyControls .add:hover .qty-plus-hori {
-	background-color: #00FF00;
+  background-color: #00FF00;
 }
 .qtyControls .add:hover:active .qty-plus-vert,
 .qtyControls .add:hover:active .qty-plus-hori {
-	background-color: #00cc00;
+  background-color: #00cc00;
 }
 .qtyControls .minus:hover .qty-plus-hori {
-	background-color: #F0E121;
+  background-color: #F0E121;
 }
 .qtyControls .minus:hover:active .qty-plus-hori {
-	background-color: #B8AC19;
+  background-color: #B8AC19;
 }
 .qtyControls .remove:hover .qty-plus-vert,
 .qtyControls .remove:hover .qty-plus-hori {
-	background-color: #DC143C;
+  background-color: #DC143C;
 }
 .listCard:hover .qtyControls {
-	display: inline-block;
+  display: inline-block;
 }
 .control {
-	text-align: right;
-	padding-top: 15px;
+  text-align: right;
+  padding-top: 15px;
 }
 button {
-	height: 30px;
-	width: 110px;
-	outline: none;
-	display: inline-block;
-	cursor: pointer;
-	background-color: rgb(85, 85, 85);
-	color: #f5661b;
-	border: none;
-	font-size: 14px;
-	border-radius: 5px;
-	text-align: center;
+  height: 30px;
+  width: 110px;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+  background-color: rgb(85, 85, 85);
+  color: #f5661b;
+  border: none;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
 }
 #exportList, #copyList, #buyList, #buildList, #clearList {
-	margin-left: 1%;
-	margin-right: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 #clearList {
-	margin-left: 0%;
+  margin-left: 0%;
 }
 #copyList {
-	margin-right: 0%;
+  margin-right: 0%;
 }
 svg {
-	width: 14px;
-	height: 14px;
-	fill: #f5661b;
-	margin-left: 10%;
+  width: 14px;
+  height: 14px;
+  fill: #f5661b;
+  margin-left: 10%;
 }
 button:hover {
-	color: #FF8C00;
+  color: #FF8C00;
 }
 button:hover svg {
-	fill: #FF8C00;
+  fill: #FF8C00;
 }
 .dl-button {
-	top: 5px;
-	right: 5px;
-	padding: 5px;
-	position: absolute;
-	cursor: pointer;
-	width: 16px;
-	height: 16px;
-	transform: rotate(45deg);
+  top: 5px;
+  right: 5px;
+  padding: 5px;
+  position: absolute;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  transform: rotate(45deg);
 }
 .dl-plus-hori {
-	position: absolute;
-	width: 16px;
-	height: 2px;
-	margin: auto;
-	top: 14px;
-	left: 7px;
-	pointer-events: none;
-	background-color: rgb(238, 238, 238);
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  margin: auto;
+  top: 14px;
+  left: 7px;
+  pointer-events: none;
+  background-color: rgb(238, 238, 238);
 }
 .dl-plus-vert {
-	position: absolute;
-	width: 2px;
-	height: 16px;
-	margin: auto;
-	top: 7px;
-	left: 14px;
-	pointer-events: none;
-	background-color: rgb(238, 238, 238);
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  margin: auto;
+  top: 7px;
+  left: 14px;
+  pointer-events: none;
+  background-color: rgb(238, 238, 238);
 }
 #listText::-webkit-scrollbar {
-	width: 10px;
-	height: 30px
+  width: 10px;
+  height: 30px
 }
 #listText::-webkit-scrollbar-thumb {
-	background: #808080;
-	border-radius: 30px;
+  background: #808080;
+  border-radius: 30px;
 }
 #listText::-webkit-scrollbar-track {
-	background: rgb(85, 85, 85);
+  background: rgb(85, 85, 85);
 }
 textarea.copy {
-	height: 1px;
-	width: 1px;
-	opacity: 0;
+  height: 1px;
+  width: 1px;
+  opacity: 0;
 }
 @font-face {
-	font-family: 'goudyMagic';
-	src: url('/goudyMagic.ttf') format('truetype');
+  font-family: 'goudyMagic';
+  src: url('/goudyMagic.ttf') format('truetype');
 }
 div {
-	font-family: 'goudyMagic';
+  font-family: 'goudyMagic';
 }
 
 #imageContainer img {
-	pointer-events: none;
-	border-radius: 5%;
-	position: absolute;
-	right: 120px;
-	top: 18px;
-	opacity: 0;
-	z-index: -9999;
-	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  border-radius: 5%;
+  position: absolute;
+  right: 120px;
+  top: 18px;
+  opacity: 0;
+  z-index: -9999;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
 #imageContainer img.visible {
-	opacity: 1;
-	z-index: 15;
+  opacity: 1;
+  z-index: 15;
 }

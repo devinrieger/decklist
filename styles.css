@@ -1,35 +1,35 @@
 .dl-button {
-	top: 0;
-	right: 0;
-	padding: 5px;
-	position: absolute;
-	opacity: 0.3;
-	cursor: pointer;
-	background-color: #333;
-	border-radius: 30px;
-	width: 30px;
-	height: 30px;
-	z-index: 99999;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  position: absolute;
+  opacity: 0.3;
+  cursor: pointer;
+  background-color: #333;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  z-index: 99999;
 }
 .dl-plus-hori {
-	position: absolute;
-	background-color: #FFF;
-	width: 16px;
-	height: 2px;
-	margin: auto;
-	top: 14px;
-	left: 7px;
-	pointer-events: none;
+  position: absolute;
+  background-color: #FFF;
+  width: 16px;
+  height: 2px;
+  margin: auto;
+  top: 14px;
+  left: 7px;
+  pointer-events: none;
 }
 .dl-plus-vert {
-	position: absolute;
-	background-color: #FFF;
-	width: 2px;
-	height: 16px;
-	margin: auto;
-	top: 7px;
-	left: 14px;
-	pointer-events: none;
+  position: absolute;
+  background-color: #FFF;
+  width: 2px;
+  height: 16px;
+  margin: auto;
+  top: 7px;
+  left: 14px;
+  pointer-events: none;
 }
 .card-grid-item:hover .dl-button,
 .card-image-front:hover .dl-button,
@@ -44,75 +44,75 @@
 .pl-2:hover .dl-button,
 .col-4:hover .dl-button,
 .mtgcard-wrapper:not(.newcard):hover .dl-button {
-	opacity: 0.6;
+  opacity: 0.6;
 }
 .dl-check {
-	animation: checkrotate 0.2s 1 forwards;
+  animation: checkrotate 0.2s 1 forwards;
 }
 .dl-check .dl-plus-hori {
-	animation: horicheckmorph 0.2s 1 forwards;
+  animation: horicheckmorph 0.2s 1 forwards;
 }
 .dl-check .dl-plus-vert {
-	animation: vertcheckmorph 0.2s 1 forwards;
+  animation: vertcheckmorph 0.2s 1 forwards;
 }
 .dl-default .dl-plus-hori {
-	animation: horidefaultmorph 0.2s 1 forwards;
+  animation: horidefaultmorph 0.2s 1 forwards;
 }
 .dl-default .dl-plus-vert {
-	animation: vertdefaultmorph 0.2s 1 forwards;
+  animation: vertdefaultmorph 0.2s 1 forwards;
 }
 @keyframes checkrotate {
-	100% {
-		transform: rotate(45deg);
-		opacity: 0.8;
-	}
+  100% {
+    transform: rotate(45deg);
+    opacity: 0.8;
+  }
 }
 @keyframes horicheckmorph {
-	100% {
-		position: absolute;
-		width: 7px;
-		height: 2px;
-		top: 19px;
-		left: 10px;
-		padding-left: 3px;
-		background-color: #00FF00;
-	}
+  100% {
+    position: absolute;
+    width: 7px;
+    height: 2px;
+    top: 19px;
+    left: 10px;
+    padding-left: 3px;
+    background-color: #00FF00;
+  }
 }
 @keyframes vertcheckmorph {
-	100% {
-		position: absolute;
-		width: 2px;
-		height: 12px;
-		top: 8px;
-		left: 15px;
-		background-color: #00FF00;
-	}
+  100% {
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    top: 8px;
+    left: 15px;
+    background-color: #00FF00;
+  }
 }
 @keyframes horidefaultmorph {
-	100% {
-		background-color: #FFF;
-		width: 16px;
-		height: 2px;
-		margin: auto;
-		top: 14px;
-		left: 7px;
-	}
+  100% {
+    background-color: #FFF;
+    width: 16px;
+    height: 2px;
+    margin: auto;
+    top: 14px;
+    left: 7px;
+  }
 }
 @keyframes vertdefaultmorph {
-	100% {
-		background-color: #FFF;
-		width: 2px;
-		height: 16px;
-		margin: auto;
-		top: 7px;
-		left: 14px;
-	}
+  100% {
+    background-color: #FFF;
+    width: 2px;
+    height: 16px;
+    margin: auto;
+    top: 7px;
+    left: 14px;
+  }
 }
 *, *:before, *:after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 [class*='Card_clipboardButton'] {
-	right: auto;
-	left: 10px;
+  right: auto;
+  left: 10px;
 }
