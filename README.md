@@ -13,20 +13,19 @@ The list can also be automatically exported to TCGPlayer and Archidekt.
 Supported Sites:
 - Scryfall
 - Gatherer
-- Magic Spoiler
-- EDHRec
-- Cube Cobra
-- TCGPlayer
 - StrictlyBetter
 
 Known Issues:
-- Partners on EDHRec are funky and will require some time to figure out how to support
+- Duskmourn room cards don't load images properly.
+- Some previously supported sites no longer work, probably due to updated selectors.
+- Partners on EDHRec are funky and will require some time to figure out how to support.
 - TCGPlayer does not differentiate their products in any meaningful way on search result pages. This means that the "add" button will appear on any product, not just Magic cards.
 
 Desired Features:
 - Multiple lists (this may be a breaking change, in that the underlying storage structure would have to change and thus users would lose any current list)
 - Text import
 - Prices
+- Specific sets/styles for added cards
 
 Notes:
 
