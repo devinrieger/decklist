@@ -25,7 +25,7 @@ Desired Features:
 - Multiple lists (this may be a breaking change, in that the underlying storage structure would have to change and thus users would lose any current list)
 - Text import
 - Prices
-- Specific sets/styles for added cards
+- Specific sets/styles for added cards since this is an increasing consideration when deckbuilding
 
 Notes:
 
